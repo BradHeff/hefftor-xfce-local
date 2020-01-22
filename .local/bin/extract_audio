@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 2 ]; then
+	ffmpeg -i "$1" -f mp3 -ab 320000 -vn "$2"
+else
+	echo "Incorrect inputs"
+fi
