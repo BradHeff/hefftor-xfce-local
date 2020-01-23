@@ -2,7 +2,7 @@
 
 
 if [ $# -eq 3 ]; then
-    ffmpeg -i "$1" -i "$2" -shortest -c:v copy -c:a aac -b:a 256k "$3"
+    ffmpeg -i "$1" -i "$2" -c:v copy -map 0:v:0 -map 1:a:0 "$3"
 else
     echo "Incorrect inputs"
     echo "Format:"
